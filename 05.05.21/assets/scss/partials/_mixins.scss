@@ -1,0 +1,23 @@
+// @mixin resize {
+//     @each $key, $value in $grid-breakpoints {
+//         @for $i from 1 through $column {
+//             .col-#{$key}-#{$i}{
+//                 width: calc(100% / #{$column} * #{$i});
+//             }
+//         }
+//     }
+// }
+
+@mixin media-query {
+    @each $key, $value in $grid-breakpoints {
+        @media only screen and (max-width: #{$value}) {
+            @content;
+            @for $i from 1 through $column {
+                .col-#{$key}-#{$i}{
+                    width: calc(100% / #{$column} * #{$i});
+                }
+            }
+        }
+    }
+}
+  
