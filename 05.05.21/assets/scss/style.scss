@@ -1,0 +1,8 @@
+@import 'partials/variable';
+@import 'partials/mixins';
+
+@include media-query;
+
+.row{
+    display: flex;
+}
